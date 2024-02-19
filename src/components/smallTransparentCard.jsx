@@ -1,6 +1,6 @@
-import BlueButton from "./blueButton"
+import BlueRedirect from "./blueRedirect"
 
-const SmallTransparentCard = ({title, benefit,srcImg}) => {
+const SmallTransparentCard = ({title, benefit, srcImg, btnText, link}) => {
     return (
       <div id="serviceCard" className="py-6 px-4 min-w-[350px] max-w-[350px] h-[250px] flex flex-col rounded-md bg-gradient-to-r from-gray-50/10 to-white/10 backdrop-blur-sm border
                          hover:bg-green-600   
@@ -18,9 +18,10 @@ const SmallTransparentCard = ({title, benefit,srcImg}) => {
                 <p className="text-md text-slate-200">{benefit}</p>
             </div>    
 
-            <div className="">
-                <BlueButton 
-                    linkText="Más detalles"
+            <div className="mt-5">
+                <BlueRedirect
+                  btnText={btnText}
+                  btnValue={link}
                 />
             </div>    
       </div>

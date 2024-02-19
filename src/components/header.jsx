@@ -1,51 +1,16 @@
-import {nav} from "../../lang-es.js"
-import useScreenSize from "../hooks/useScreenSize"
-import { useEffect, useState } from "react"
 import MobileNavBar from "./mobileNavBar"
-// import NavBar from "./navBar"
-// import LogoSection from "./logoSection"
- import HamburgerMenu from "./hamburgerMenu"
+import HamburgerMenu from "./hamburgerMenu"
+import useData from "../hooks/useData";
 
 
-const Header = () => {
 
-  const screenSize = useScreenSize()
-  const [isMobile, setIsMobile] = useState(false);
-  const [isNavBarActive, setIsNavBarActive] = useState(false);
+const Header = ({}) => {
+  
+  const {isMobile, isNavBarActive, handleNavBar, language} = useData();
+  
+  const {nav} = language;
 
-  useEffect( () => {
-    if(screenSize.width<1350){
-      setIsMobile(true)
-      return
-    }
-    setIsMobile(false)
-  },[screenSize])
 
-  function handleNavBar () {
-    setTimeout ( () => {
-      setIsNavBarActive(!isNavBarActive)
-    },150)
-    if (!isNavBarActive){
-      disableScroll()
-      return
-    }
-    enableScroll()
-  }
-
-  function disableScroll() {
-    // Get the current page scroll position
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-    // if any scroll is attempted, set this to the previous value
-    window.onscroll = () => {
-      window.scrollTo(scrollLeft, scrollTop);
-    };
-  }
-
-function enableScroll() {
-    window.onscroll = function() {};
-}
 
 
   return (
@@ -80,38 +45,84 @@ function enableScroll() {
 
           {/* Mobile */}
           {isMobile ? (
-          <div className="w-full">
-            <HamburgerMenu 
-              handleNavBar={handleNavBar}/>
+            <div id="mobileBar" className="w-full">
+              
+              <div className="flex flex-row">
+              
+                <div className="w-full">
+                  <HamburgerMenu 
+                    handleNavBar={handleNavBar}/>
 
-            <MobileNavBar 
-              isNavBarActive={isNavBarActive}
-              handleNavBar={handleNavBar}/>
-          </div>
+                  <MobileNavBar 
+                    isNavBarActive={isNavBarActive}
+                    handleNavBar={handleNavBar}/>
+                </div>
 
-        ):(
+              </div>
+            </div>
+
+          ):(
           
-          <div className="flex-grow">
-            <nav className="h-full flex items-center justify-center">
-              <ul className="flex flex-col md:flex-row gap-3 justify-center items-center text-white">
-                {
-                  nav.map( (element,idx) => (
-                    <li 
-                      key={idx}
-                      className=" bg-white rounded-sm text-blue-500 font-bold text-center align-middle px-2 py-1 uppercase"
-                      >{element}</li>
-                  ))
-                }
-              </ul>
-            </nav>
-          </div>
+            // Desktop
             
-          
-        )}
-          
+            <div className="flex-grow">
+
+               {/* language Selector*/}
+              <div className="flex justify-end"> 
+                  {/* <div className="flex flex-row gap-x-2">
+                    <div className="flex justify-center items-center active:scale-90 transition ease-in-out">
+                      <div className="relative">
+                        <button 
+                            value={"spanish"}
+                            onClick={e => handleChangeLanguage(e)}
+                            className="px-2 py-1 rounded-md text-white bg-blue-700 hover:bg-blue-800"
+                              >{"Es"}
+                        </button>
+                        <span className="absolute flex h-3 w-3 top-0 right-0">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-center items-center active:scale-90 transition ease-in-out">
+                      <div className="relative">
+                        <button 
+                            value={"english"}
+                            onClick={e => handleChangeLanguage(e)}
+                            className="px-2 py-1 rounded-md text-white bg-blue-700 hover:bg-blue-800"
+                              >{"En"}
+                        </button>
+                        <span className="absolute flex h-3 w-3 top-0 right-0">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div> */}
+              </div>
+
+              <nav className="flex items-center justify-center">
+                <ul className="flex flex-col md:flex-row gap-3 justify-center items-center text-white">
+                  {
+                    nav.map( (element,idx) => (
+                      <li 
+                        key={idx}
+                        className=" bg-white rounded-sm text-blue-500 font-bold text-center align-middle px-2 py-1 uppercase"
+                        >{element}</li>
+                    ))
+                  }
+                </ul>
+              </nav>
+            </div>
+
+            
+          )}
 
       </header>
   )
 }
 
 export default Header
+
+

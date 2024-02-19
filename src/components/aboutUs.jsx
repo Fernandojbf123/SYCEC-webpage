@@ -1,8 +1,12 @@
-import {headers, links} from "../../lang-es.js"
-import BlueButton from "./blueButton.jsx"
 import SectionHeader from "./sectionHeader.jsx"
+import useData from "../hooks/useData";
+import BlueRedirect from "./blueRedirect.jsx";
 
 const AboutUs = () => {
+
+    const {language} = useData();
+    const {headers, links, linksText} = language;
+
   return (
     <section id="aboutUs" className="w-full pt-3 pb-5 px-5 bg-slate-600 text-slate-300">
 
@@ -14,7 +18,7 @@ const AboutUs = () => {
             />
             
             <div className="px-5 mt-3 w-full">
-                <ul>
+                <ul className="">
                     {headers.aboutUs.list.map ((element,idx)=> (
                         <li 
                         className="list-disc"
@@ -22,9 +26,12 @@ const AboutUs = () => {
                     ))}
                 </ul>
                 
-                <BlueButton
-                    linkText={links.toMision}
-                />
+                <div className="mt-6 mb-3">
+                    <BlueRedirect
+                        btnText={linksText.toAboutUs}
+                        btnValue={links.toAboutUs}
+                    />
+                </div>
                 
             </div>
         </div>

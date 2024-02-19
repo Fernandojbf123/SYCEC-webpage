@@ -1,8 +1,12 @@
-import {headers} from "../../lang-es.js"
 import SectionHeader from "./sectionHeader.jsx"
 import SmallTransparentCard from "./smallTransparentCard.jsx"
+import useData from "../hooks/useData";
 
 const Services = () => {
+
+    const {language} = useData();
+    const {headers, linksText} = language;    
+
   return (
     <section id="services" className="w-full  bg-slate-600 text-slate-300">
 
@@ -23,6 +27,8 @@ const Services = () => {
                             title = {element}
                             benefit = {headers.services.descriptionOfList[idx]}
                             srcImg = {headers.services.imgSrc[idx]}
+                            btnText = {headers.services.linkText}
+                            link = {headers.services.link[idx]}
                             key={idx}
                     />
                     ))}

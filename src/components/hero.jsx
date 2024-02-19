@@ -1,6 +1,9 @@
-import {headers} from "../../lang-es.js"
+import useData from "../hooks/useData";
 
-const Hero = () => {
+const Hero = ({}) => {
+
+  const {language} = useData();
+  const {headers} = language;
 
   return (
     <section id="hero" className="w-full">

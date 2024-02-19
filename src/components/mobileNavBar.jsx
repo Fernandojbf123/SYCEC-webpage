@@ -1,7 +1,17 @@
 
-const MobileNavBar = ({ isNavBarActive, handleNavBar }) => {
+import { HashLink } from "react-router-hash-link"
+import { useLocation } from "react-router-dom"
+import BlueButton from "./blueButton";
+import useData from "../hooks/useData";
 
 
+const MobileNavBar = () => {
+  const location = useLocation()
+  const { pathname } = location;
+  const {language, isNavBarActive,handleNavBar, handleChangeLanguage} = useData()
+  
+  const {nav} = language;
+  
 
   return (
     <div id="modalNavBar" className={`fixed top-0 left-0 w-screen h-screen flex flex-col z-20 backdrop-blur-md backdrop ${!isNavBarActive ? "-translate-x-[110%]" : "translate-x-0"}`}>
@@ -19,40 +29,66 @@ const MobileNavBar = ({ isNavBarActive, handleNavBar }) => {
               src="./SYCEC-logo.webp"
               alt="sycec logo"
             />
-            
           </div>
+
+          <div className="flex flex-row gap-3 justify-center">
+                  <BlueButton 
+                    btnText={"Español"}
+                    btnValue={"spanish"}
+                    btnOnClick={handleChangeLanguage}
+                  />
+
+                  <BlueButton 
+                    btnText={"English"}
+                    btnValue={"english"}
+                    btnOnClick={handleChangeLanguage}
+                  />
+                </div>
         </div>
 
         <nav className="mt-10 px-5">
-          {/* <ul className="[&>a>li]:font-bold [&>a>li]:flex [&>a>li]:items-center [&>a>li]:px-5 [&>a>li]:py-2 [&>a>li]:bg-slate-800">
-            <div id="index" smooth to="/index#hero" onClick={handleNavBar} className="[&>li]:active:bg-yellow-300 [&>li]:active:scale-95 [&>li]:hover:bg-[--tertiary]">
-              <li className={`text-[--quaternary] border-slate-400 border flex ${pathname === "/index" && "!bg-[--tertiary]"}`}>
+
+        <ul className="[&>a>li]:font-bold [&>a>li]:flex [&>a>li]:items-center [&>a>li]:px-5 [&>a>li]:py-2 [&>a>li]:bg-slate-800">
+            <HashLink id="goToIndex" smooth to="/#hero" onClick={handleNavBar} className="[&>li]:active:bg-green-500 [&>li]:active:scale-95 [&>li]:hover:bg-green-500">
+              <li className={`text-slate-200 border-slate-400 border flex ${pathname === "/" && " !text-slate-800 !bg-green-500"}`}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6 mr-3">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
                 </svg>
-                {`index`}<span className="text-[--tertiary]">{`~`}</span>
+                {nav[0]}<span className="text-slate-200"></span>
               </li>
-            </div>
+            </HashLink>
 
-            <div smooth to="/index#clientList" onClick={handleNavBar} className="[&>li]:active:bg-yellow-300 [&>li]:active:scale-95 [&>li]:hover:bg-[--tertiary]">
-              <li className="text-[--quaternary] border-slate-400 border flex">
+            <HashLink smooth to="/#aboutUs" onClick={handleNavBar} className="[&>li]:active:bg-green-500 [&>li]:active:scale-95 [&>li]:hover:bg-green-500">
+              <li className="text-slate-200 border-slate-400 border flex">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6 mr-3">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
                 </svg>
 
-                {`clients`}<span className="text-[--tertiary]">{`~`}</span>
-              </li></div>
+                {nav[1]}<span className="text-slate-200"></span>
+              </li>
+            </HashLink>
 
-            <div smooth to="/index#problems" onClick={handleNavBar} className="[&>li]:active:bg-yellow-300 [&>li]:active:scale-95 [&>li]:hover:bg-[--tertiary]">
-
-              <li className="text-[--quaternary] border-slate-400 border flex">
+            <HashLink smooth to="/#services" onClick={handleNavBar} className="[&>li]:active:bg-green-500 [&>li]:active:scale-95 [&>li]:hover:bg-green-500">
+              <li className="text-slate-200 border-slate-400 border flex">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6 mr-3">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
                 </svg>
 
-                {`problems?`}<span className="text-[--tertiary]">{`~`}</span>
+                {nav[2]}<span className="text-slate-200"></span>
               </li>
-            </div>
+            </HashLink>
+
+            <HashLink smooth to="/#services" onClick={handleNavBar} className="[&>li]:active:bg-green-500 [&>li]:active:scale-95 [&>li]:hover:bg-green-500">
+              <li className="text-slate-200 border-slate-400 border flex">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6 mr-3">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                </svg>
+
+                {nav[3]}<span className="text-slate-200"></span>
+              </li>
+            </HashLink>
+          </ul>
+          {/* <ul className="[&>a>li]:font-bold [&>a>li]:flex [&>a>li]:items-center [&>a>li]:px-5 [&>a>li]:py-2 [&>a>li]:bg-slate-800">
 
             <div smooth to="/index#benefits" onClick={handleNavBar} className="[&>li]:active:bg-yellow-300 [&>li]:active:scale-95 [&>li]:hover:bg-[--tertiary]">
               <li className="text-[--quaternary] border-slate-400 border flex">

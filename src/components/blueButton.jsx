@@ -1,13 +1,14 @@
-
-const BlueButton = ({linkText}) => {
+const BlueButton = ({btnText, btnValue, btnOnClick}) => {
   return (
     <div className="mt-3 flex justify-center items-center active:scale-90 transition ease-in-out">
         <div className="relative">
             <button 
-                href=""
+                to={btnValue}
+                value={btnValue}
+                onClick={e =>btnOnClick(e)}
                 className="px-3 py-3 rounded-md text-white bg-blue-700 hover:bg-blue-800"
             >
-                {linkText}
+                {btnText}
             </button>
 
             <span className="absolute flex h-3 w-3 top-0 right-0">
@@ -16,6 +17,8 @@ const BlueButton = ({linkText}) => {
             </span>
         </div>
     </div>
+
+    
   )
 }
 
