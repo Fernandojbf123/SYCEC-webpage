@@ -10,7 +10,7 @@ const MobileNavBar = () => {
   const { pathname } = location;
   const {language, isNavBarActive,handleNavBar, handleChangeLanguage} = useData()
   
-  const {nav} = language;
+  const {nav, navLink} = language;
   
 
   return (
@@ -32,7 +32,16 @@ const MobileNavBar = () => {
           </div>
 
           <div className="flex flex-row gap-3 justify-center">
-                  <BlueButton 
+                  
+                  <select 
+                    name="selectedLanguage" 
+                    className="w-[100px] h-[30px] px-2 py-1 text-slate-200 bg-slate-800 rounded-md [&>option]:hover:bg-green-500"
+                    onChange={e => handleChangeLanguage(e)}
+                    >
+                    <option value={"spanish"}>{"Español"}</option>
+                    <option value={"english"}>{"English"}</option>
+                  </select>
+                  {/* <BlueButton 
                     btnText={"Español"}
                     btnValue={"spanish"}
                     btnOnClick={handleChangeLanguage}
@@ -42,7 +51,7 @@ const MobileNavBar = () => {
                     btnText={"English"}
                     btnValue={"english"}
                     btnOnClick={handleChangeLanguage}
-                  />
+                  /> */}
                 </div>
         </div>
 
@@ -78,7 +87,7 @@ const MobileNavBar = () => {
               </li>
             </HashLink>
 
-            <HashLink smooth to="/#services" onClick={handleNavBar} className="[&>li]:active:bg-green-500 [&>li]:active:scale-95 [&>li]:hover:bg-green-500">
+            <HashLink smooth to="/#experience" onClick={handleNavBar} className="[&>li]:active:bg-green-500 [&>li]:active:scale-95 [&>li]:hover:bg-green-500">
               <li className="text-slate-200 border-slate-400 border flex">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6 mr-3">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
@@ -160,7 +169,7 @@ const MobileNavBar = () => {
             </a>
             <span
               className="w-[80px] animate-bounce">
-              6461979027
+              +52 938 1180 023
             </span>
           </div>
         </div>

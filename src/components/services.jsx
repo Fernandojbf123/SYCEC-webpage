@@ -5,10 +5,10 @@ import useData from "../hooks/useData";
 const Services = () => {
 
     const {language} = useData();
-    const {headers, linksText} = language;    
+    const {headers} = language;    
 
   return (
-    <section id="services" className="w-full  bg-slate-600 text-slate-300">
+    <section id="services" className="w-full bg-slate-200 text-slate-300">
 
         
         <div className="relative px-5 w-full flex justify-center">

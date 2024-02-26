@@ -8,6 +8,14 @@ const languageES =
         "Contacto",
     ],
 
+    navLink: [
+        "hero",
+        "aboutUs",
+        "services",
+        "experience",
+        "contact",
+    ],
+
     headers: {
 
         headerOne: {
@@ -76,20 +84,39 @@ const languageES =
         experience: {
             title: "Experiencia",
             text: "En Febrero del 2006 inicia formalmente operaciones Servicio y Consultoría del Carmen",
-            list:  [
-                "",
-                "",
-                "",
-                "",
-                "",
+            imagesSrc:  [
+                "./experience/2006_QV.png",
+                "./experience/2006_alimentos.jpg",
+                "./experience/2007_AnalisisResidual.jpg",
+                "./experience/2008_EstudiosAmbientales.png",
+                "./experience/2008_AnalisisPotable2.jpg",
+                "./experience/2009_EstudiosAmbientales.png"
                 ],
-            descriptionOfList: [
-                "",
-                "",
-                "",
-                "",
-                "",
-                ]
+            imagesDate: [
+                "MARZO 2006",
+                "AGOSTO 2006",
+                "FEBRERO 2007",
+                "ENERO 2008",
+                "SEPTIEMBRE 2008",
+                "JUNIO 2009",
+                ],
+            imagesTitle: [
+                "CONVENIO CON QV",
+                "TRABAJOS DE MUESTREO Y ANÁLISIS DE ALIMENTOS",
+                "ANÁLISIS DE AGUA RESIDUAL Y ESTUDIOS DE MUESTRO",
+                "ESTUDIOS AMBIENTALES",
+                "ANÁLISIS DE AGUA POTABLE Y AGUA RESIDUAL",
+                "ESTUDIOS AMBIENTALES",
+
+            ],
+            imagesDescription: [
+                "Convenio con Laboratorios Química Veracruzana acreditada ante EMMA (Entidad Mexicana de Acreditación)",
+                "Con la empresa PCI (Proyectos y Cimentaciones Industriales, SA de CV), quienes tenían contratos de hotelería y hospedaje a plataformas marinas, se inician los estudios de muestreo y análisis de alimentos",
+                "Se inician muestreos y análisis de agua residual a las Embarcaciones de LMC (Logística Mexicana del Caribe, S de RL de CV), quien es socia de la internacional TideWater",
+                "Se inician trabajos en estudios Ambientales como ARP, PRE, PCA y Atlas de Riesgos, a las Plataformas Marinas de la Empresa TODCO México Inc. (The Offshore Drilling Company)",
+                "Se inician trabajos de muestreos y análisis de agua potable y agua residual a la Empresa COSL (China Oilfield Service Limited) en Plataformas Marinas",
+                "Se inician trabajos de estudios Ambientales como ARP, PRE, PCA y Atlas de Riesgos; asi como el análisis de agua potable y agua residual a la Plataforma Rowan Gorilla IV, de la empresa Rowan Drill",
+            ],
         },
 
         contact: {
