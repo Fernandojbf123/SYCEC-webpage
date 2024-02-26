@@ -1,6 +1,4 @@
 import { useState, useEffect, createContext } from "react";
-import { HashLink } from "react-router-hash-link"
-import { useLocation } from "react-router-dom"
 import useScreenSize from "../hooks/useScreenSize";
 import {languageES} from "../../lang-es.js"
 import {languageEN} from "../../lang-en.js"
