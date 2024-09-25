@@ -19,7 +19,7 @@ const languageES =
     headers: {
 
         headerOne: {
-            title: "SERVICIO FER SABROSO",
+            title: "SERVICIO Y CONSULTORÍA ESPECIALIZADOS DEL CARMEN",
             text: "Ingeniería aplicada a seguridad, higiene y ambiente",
             list: [],
             descriptionOfList: []
