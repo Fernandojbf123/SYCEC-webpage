@@ -5,18 +5,15 @@ import useData from "../hooks/useData";
 import { HashLink } from "react-router-hash-link"
 import { useLocation } from "react-router-dom"
 
-
+import BlueButton from "./blueButton"
 
 const Header = ({ }) => {
 
-  const { isMobile, isNavBarActive, handleNavBar, language } = useData();
-
+  const { isMobile, isNavBarActive, handleNavBar, language, handleChangeLanguage } = useData()
   const { nav, navLink } = language;
   
   const location = useLocation()
   const { pathname } = location;
-
-
 
   return (
     <header className="w-full flex bg-slate-800
@@ -74,7 +71,25 @@ const Header = ({ }) => {
 
           {/* language Selector*/}
           <div className="flex justify-end">
-            
+            <select 
+              name="selectedLanguage" 
+              className="w-[100px] h-[30px] px-2 py-1 text-slate-200 bg-slate-800 rounded-md [&>option]:hover:bg-green-500"
+              onChange={e => handleChangeLanguage(e)}
+              >
+              <option value={"spanish"}>{"Español"}</option>
+              <option value={"english"}>{"English"}</option>
+            </select>
+            {/* <BlueButton 
+              btnText={"Español"}
+              btnValue={"spanish"}
+              btnOnClick={handleChangeLanguage}
+            />
+
+            <BlueButton 
+              btnText={"English"}
+              btnValue={"english"}
+              btnOnClick={handleChangeLanguage}
+            /> */}
           </div>
 
           <nav className="flex items-center justify-center">
@@ -91,7 +106,7 @@ const Header = ({ }) => {
                     smooth to={`/#${navLink[idx]}`}
                     className="[&>li]:active:bg-green-500 [&>li]:active:scale-95 [&>li]:hover:bg-green-500">
 
-                    <li className={`text-slate-200 border-slate-400 border flex ${pathname === "/" && " !text-slate-800 !bg-green-500"}`}>
+                    <li className={`px-2 text-slate-200 border-slate-400 border flex rounded-md ${pathname === "/" && " !text-slate-800 !bg-green-500"}`}>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6 mr-3">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
                       </svg>

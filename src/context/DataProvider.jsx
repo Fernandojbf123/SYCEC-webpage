@@ -68,6 +68,7 @@ const DataProvider = ({children}) => {
     },[currentLangSelection])
 
     function handleChangeLanguage(e) {
+      // console.log(e.target.value)
       setCurrentLangSelection(e.target.value)
     }
 

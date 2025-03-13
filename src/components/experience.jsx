@@ -6,6 +6,7 @@ const Experience = () => {
 
     const {language} = useData();
     const {headers} = language;
+    console.log(language)
 
   return (
 
