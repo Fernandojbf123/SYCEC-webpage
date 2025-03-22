@@ -14,7 +14,7 @@ function Index() {
   
        <Hero />  
 
-       <div className="mx-auto flex flex-col md:flex-row">
+       <div className="mx-0 px-0 flex flex-col md:flex-row">
         <AboutUs />
 
          <Staff />

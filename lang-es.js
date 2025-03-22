@@ -20,7 +20,7 @@ const languageES =
 
         headerOne: {
             title: "SERVICIO Y CONSULTORÍA ESPECIALIZADOS DEL CARMEN",
-            text: "Ingeniería aplicada a seguridad, higiene y ambiente",
+            text: "Especialistas en soluciones de ingeniería aplicada utilizando prácticas inovadoras y tecnología de punta",
             list: [],
             descriptionOfList: []
             
@@ -42,7 +42,7 @@ const languageES =
         
         services: {
             title: "Servicios",
-            text: "Ofrecemos servicios de mediciones, análisis de datos y capacitación en las siguientes áreas:",
+            text: " ",
             list:  [
                     "Ambiental",
                     "Metoceánica",

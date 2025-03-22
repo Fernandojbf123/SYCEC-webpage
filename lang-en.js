@@ -19,8 +19,8 @@ const languageEN =
     headers: {
 
         headerOne: {
-            title: "SPECIALIZED CONSULTING AND SERVICES OF CARMEN",
-            text: "Engineering applied to safety, hygiene, and environment",
+            title: "SERVICIO Y CONSULTORÍA ESPECIALIZADOS DEL CARMEN",
+            text: "Applied Engineering, safety, hygiene, and environment",
             list: [],
             descriptionOfList: []
         },
@@ -41,7 +41,7 @@ const languageEN =
         
         services: {
             title: "Services",
-            text: "We offer measurement services, data analysis, and training in the following areas:",
+            text: "",
             list:  [
                     "Environmental",
                     "Metoceanic",
