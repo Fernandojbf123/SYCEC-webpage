@@ -52,7 +52,7 @@ const languageES =
                     ],
             descriptionOfList: [
                     "Pre-checklist a Plataformas, análisis agua residual y potable, análisis de alimentos.",
-                    "Meidiciones, análisis estadístico, parámetros metoceánicos de diseño, pronóstico metoceánico.",
+                    "Mediciones, análisis estadístico, parámetros metoceánicos de diseño, pronóstico metoceánico.",
                     "Servicios estructurales costa afuera, sistema de pronóstico de evaluación de integridad estrutural de plataformas marinas.",
                     "Cursos, seguridad industrial, asistencia técnica PND.",
                     "Distribuidores de sistemas solares y eólicos para generar energía renovable a la empresa mexicana.",
