@@ -10,7 +10,7 @@ const Services = () => {
   return (
     <section id="services" className="w-full min-h-[750px] h-full">
         
-        <div className="relative px-5 w-full h-full flex justify-center bg-red-900">
+        <div className="relative px-5 w-full h-full flex justify-center bg-slate-300">
 
             <div className="absolute top-0 left-0 z-0  h-full w-full">
                 <video 
