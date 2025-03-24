@@ -58,7 +58,8 @@ const languageES =
             ],
             imgSrc: ["servAmbiental.webp","servMetoceanica.webp","servEstructural.webp","servCapacitacion.webp","servRenovable.webp"],
             linkText: "Más detalles",
-            link: ["/ambiental","/metoceanica","/estructural","/consultoria","/energia"],
+            // link: ["/ambiental","/metoceanica","/estructural","/consultoria","/energia"],
+            link: ["/","/","/","/","/"],
         },
 
         staff: {
@@ -148,10 +149,14 @@ const languageES =
         toAboutUs: "Nuestra misión, visión y valores",
         toStaff: "Conoce a nuestros especialistas"
     },
+    // links: {
+    //     index: "/",
+    //     toAboutUs: "/about-us",
+    //     toStaff: "/staff",
     links: {
         index: "/",
-        toAboutUs: "/about-us",
-        toStaff: "/staff",
+        toAboutUs: "/",
+        toStaff: "/",
     },
 
     footer: {
