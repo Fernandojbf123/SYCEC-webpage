@@ -20,27 +20,45 @@ const Header = ({ }) => {
                         md:flex-row">
 
       <div className="md:w-1/3 py-3">
-        <div className="flex flex-col gap-1 text-white ">
+        <div className="flex flex-col gap-1 text-white">
+          
           <img
             src="./SYCEC-logo.webp"
             alt="SYCEC logo"
-            className="w-[200px] h-[70px]"
+            className="w-[200px] h-[70px] px-2"
           ></img>
-          <div className="flex gap-2 mx-2 px-2">
-            <img
-              src="./gmail.png"
-              alt="ico1"
-              className="w-[20px] h-[20px] bg-white" />
-            <span>ventas.servicios@sycec.com.mx</span>
+          
+          <div className="w-full px-2">
+              <a
+                href="mailto:ventas.servicios@sycec.com.mx"
+                className="w-full flex flex-row items-center">
+                <img
+                  className="w-[48px]"
+                  src="./64px_gmail_logo.png"
+                  alt="send email to sycec"
+                  id="gmail" />
+
+                <span className="px-5 text-slate-200 font-bold text-md
+                                md:text-xl">
+                  ventas.servicios@sycec.com.mx
+                </span>
+              </a>
           </div>
-          <div className="flex gap-2 mx-2 px-2">
+
+          <div className="w-full px-2 flex flex-row items-center">
             <img
-              src="./celphone.png"
-              alt="contacto"
-              className="w-[20px] h-[20px] bg-white"
-            />
-            <span>+52 938 1180 023</span>
+              className="w-[48px]"
+              src="./64px_cellphone.png"
+              alt="send email to sycec"
+              id="gmail" />
+
+            <span className="px-5 text-slate-200 font-bold text-md
+                              md:text-xl">
+            +52 938 1180 023
+            </span>
+
           </div>
+
         </div>
       </div>
 
@@ -73,23 +91,12 @@ const Header = ({ }) => {
           <div className="flex justify-end">
             <select 
               name="selectedLanguage" 
-              className="w-[100px] h-[30px] px-2 py-1 text-slate-200 bg-slate-800 rounded-md [&>option]:hover:bg-green-500"
+              className="w-[120px] h-[30px] px-2 py-1 text-slate-200 bg-slate-800 rounded-md [&>option]:hover:bg-green-500"
               onChange={e => handleChangeLanguage(e)}
               >
-              <option value={"spanish"}>{"Español"}</option>
-              <option value={"english"}>{"English"}</option>
+              <option value={"spanish"}>{'\uD83C\uDDF2\uD83C\uDDFD'} Español</option>
+              <option value={"english"}>{'\uD83C\uDDFA\uD83C\uDDF8'} English</option>
             </select>
-            {/* <BlueButton 
-              btnText={"Español"}
-              btnValue={"spanish"}
-              btnOnClick={handleChangeLanguage}
-            />
-
-            <BlueButton 
-              btnText={"English"}
-              btnValue={"english"}
-              btnOnClick={handleChangeLanguage}
-            /> */}
           </div>
 
           <nav className="flex items-center justify-center">

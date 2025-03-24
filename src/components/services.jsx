@@ -27,7 +27,7 @@ const Services = () => {
                     />
                 </div>
 
-                <div className="container mx-auto mt-16  flex md:flex-row flex-wrap justify-center xs:justify-normal gap-20">
+                <div className="container mx-auto mt-24 mb-5  flex md:flex-row flex-wrap justify-center xs:justify-normal gap-20">
 
                     {headers.services.list.map ( (element,idx) => (
                         <SmallTransparentCard

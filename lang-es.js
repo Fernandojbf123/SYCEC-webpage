@@ -64,13 +64,14 @@ const languageES =
 
         staff: {
             title: "Colaboradores y asesores",
-            text: "Contamos con un amplio grupo de colaboradores tanto internos como externos con una extensa experiencia en todos nuestros servicios.",
+            text: "Contamos con el mejor talento nacional e internacional, con gran experiencia en:",
             list:  [
-                "",
-                "",
-                "",
-                "",
-                "",
+                "Ingeniería Aplicada.",
+                " Ciencias de la Tierra.",
+                "Dinámica Oceánica y Meterología.",
+                "Seguridad y protección ambiental.",
+                "Análisis de datos.",
+                "Análisis químicos."
                 ],
             descriptionOfList: [
                 "",

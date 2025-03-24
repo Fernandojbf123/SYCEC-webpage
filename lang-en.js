@@ -62,9 +62,16 @@ const languageEN =
         },
 
         staff: {
-            title: "Collaborators and Advisors",
-            text: "We have a large team of internal and external collaborators with extensive experience in all our services.",
-            list:  ["", "", "", "", ""],
+            title: "SYCEC's Staff",
+            text: "Counting with the best national and international talent, with extensive experience in:",
+            list:  [
+                "Applied Engineering", 
+                "Earths Sciences.", 
+                "Ocean Dynamics & Metheorology.",
+                "Enviromental Safety.",
+                "Data Processing.",
+                "Chemical Analysis."
+                ],
             descriptionOfList: ["", "", "", "", ""]
         },
 

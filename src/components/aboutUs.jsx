@@ -17,7 +17,7 @@ const AboutUs = () => {
                     text={headers.aboutUs.text}
                 />
                 
-                <div className="px-5 mt-3 w-full">
+                <div className="px-10 mt-3 w-full">
                     <ul className="text-xl">
                         {headers.aboutUs.list.map ((element,idx)=> (
                             <li 

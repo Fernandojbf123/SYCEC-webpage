@@ -19,6 +19,14 @@ const Staff = () => {
             title={headers.staff.title}
             text={headers.staff.text}
         />
+
+        <ul className="text-xl px-10">
+            {headers.staff.list.map ((element,idx)=> (
+                <li 
+                className="list-disc"
+                key={idx}>{element}</li>
+            ))}
+        </ul>
     
         <div className="py-5 h-[300px] w-full flex justify-center">
           <figure className="mt-5 relative w-[300px] h-full flex flex-col justify-center items-center rounded-md">
